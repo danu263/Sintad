@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 p-5 mx-auto">
+        <div class="card shadow-lg rounded-lg bg-white justify-content-center">
+          <div class="card-header text-center">
+            <h2 class="mx-auto pt-3">Iniciar Sesión</h2>
+          </div>
+
+          <div class="card-body text-center mx-auto">
+            <button class="btn btn-outline-danger btn-block btn-lg" (click)="signInWithGoogle()">
+              <i class="fab fa-google mr-2"></i> Inicia Sesión con Google
+            </button>
+
+            <div class="p-4 text-center">
+              <div class="h5 mb-3">Te reconmendamos usar tu correo institucional.</div>
+            </div>
+
+          </div>
+
+
+          <div class="card-footer p-4 text-center">
+            <div class="small">Lee nuestros  <a > Términos &amp; Condiciones.</a></div>
+          </div>
+
+          <!--<div class="card-footer text-center">
+              <div class="small" style="color: #0a0f16"><a style="color: #0a0f16" th:href="@{/signup}">¿No tienes una cuenta? Regístrate!</a></div>
+          </div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script async defer src="https://apis.google.com/js/api.js"></script>
+</div>
