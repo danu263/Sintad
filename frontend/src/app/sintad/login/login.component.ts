@@ -32,27 +32,34 @@ export class LoginComponent implements OnInit {
       .then((data) => {
         this.socialUser = data;
         const tokenGoogle = new TokenDto(this.socialUser.authToken);
-        this.oauthService.google(tokenGoogle).subscribe(
+        console.log('Este es el token generado: ');
+        console.log(tokenGoogle);
+        this.oauthService.google(tokenGoogle).subscribe(                // Se realiza al suscripcion al post
           (res) => {
             this.tokenService.setToken(res.value);
             this.userService.getCurrent().subscribe(
               (res) => {
+                console.log('Esta es la respuesta: ');
+                console.log(res);
                 this.tokenService.setUser(res);
                 this.router
                   .navigate([this.redirectByRole()])
                   .then();
               }, (error) => {
+                console.log('Error dentro de la suscripcion: ');
                 console.log(error);
                 this.tokenService.logOut();
               }
             );
           }, (error) => {
+            console.log('No se obtuvo respuesta');
             console.log(error);
             this.tokenService.logOut();
           }
         );
       })
       .catch((err) => {
+        console.log('Error por catch: ');
         console.log(err);
       });
   }

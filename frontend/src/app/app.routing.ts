@@ -15,25 +15,21 @@ const routes: Routes = [
     component: LoginComponent,
     pathMatch: 'full',
     canActivate: [AnonAuthGuard],
-  }/*,
-
-  // Admin navigation
-  {
-    path: 'a',
-    loadChildren: () =>
-      import('./_roles/admin-role/admin-role.module').then(
-        (m) => m.AdminRoleModule
-      ),
-    canActivate: [AdminAuthGuard],
   },
-  {
-    path: 'm',
+  { path: 'a',
     loadChildren: () =>
-      import('./_roles/mod-role/mod-role.module').then(
-        (m) => m.ModRoleModule
+      import('./_roles/admin-rol/admin-rol.module').then(
+        m => m.AdminRolModule
       ),
-    canActivate: [ModAuthGuard],
-  }*/
+    canActivate: [AdminAuthGuard]
+  },
+  { path: 'm',
+    loadChildren: () =>
+      import('./_roles/mod-rol/mod-rol.module').then(
+        m => m.ModRolModule
+      ),
+    canActivate: [ModAuthGuard]
+  }
 ];
 
 @NgModule({

@@ -5,12 +5,16 @@ import {NavbarAdminComponent} from './navbar/navbar-admin/navbar-admin.component
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { CustomAlertComponent } from './custom-alert/custom-alert.component';
+import { CustomAlertDirective } from './custom-alert/custom-alert.directive';
 
 @NgModule({
   declarations: [
     FooterComponent,
     NavbarComponent,
-    NavbarAdminComponent
+    NavbarAdminComponent,
+    CustomAlertComponent,
+    CustomAlertDirective
   ],
   imports: [CommonModule, FontAwesomeModule, RouterModule],
   exports: [

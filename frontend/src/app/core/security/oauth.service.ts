@@ -5,7 +5,11 @@ import {TokenDto} from '../../shared/_models/token-dto.model';
 import {Observable} from 'rxjs';
 
 const headers = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'/*,
+    'Accept': 'application/json',
+    'Access-Control-Allow-Headers': 'Content-Type'*/
+  }),
 };
 
 @Injectable({

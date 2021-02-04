@@ -1,3 +1,4 @@
+/* tslint:disable:prefer-const object-literal-shorthand typedef */
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';

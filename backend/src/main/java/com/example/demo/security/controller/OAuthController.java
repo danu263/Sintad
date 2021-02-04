@@ -60,18 +60,21 @@ public class OAuthController {
     @Autowired
     RolService roleService;
 
-    @PostMapping("google")
+    @PostMapping("/google")
     public ResponseEntity<?> google(@RequestBody TokenDto tokenDto) throws IOException {
         final NetHttpTransport transport = new NetHttpTransport();
         final JacksonFactory jacksonFactory = JacksonFactory.getDefaultInstance();
-        GoogleIdTokenVerifier.Builder verifier =
+        GoogleIdTokenVerifier verifier =
                 new GoogleIdTokenVerifier.Builder(transport, jacksonFactory)
-                        .setAudience(Collections.singletonList(googleClientId));
+                        .setAudience(Collections.singletonList(googleClientId)).build();
 
+        System.out.println("Valor del token: ");
+        System.out.println(tokenDto.getValue());
         final GoogleIdToken googleIdToken =  GoogleIdToken.parse(
                 verifier.getJsonFactory(), tokenDto.getValue()
         );
         final GoogleIdToken.Payload payload = googleIdToken.getPayload();
+
 
         //return  new ResponseEntity<>(payload, HttpStatus.OK);
 
