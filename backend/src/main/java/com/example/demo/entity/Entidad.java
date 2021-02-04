@@ -15,7 +15,7 @@ public class Entidad {
     @JoinColumn(name = "id_tipo_documento", nullable = false)
     private TipoDocumento tipoDoc;
 
-    @Column(name = "nro_documento", nullable = false)
+    @Column(name = "nro_documento", nullable = false, unique = true)
     private String nroDoc;
 
     @Column(name = "razon_social", nullable = false)
